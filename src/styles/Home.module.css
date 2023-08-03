@@ -34,7 +34,7 @@
   border-radius: var(--border-radius);
 }
 
-.code {
+/* .code {
   font-weight: 700;
   font-family: var(--font-mono);
 }
@@ -51,7 +51,9 @@
   border-radius: var(--border-radius);
   background: rgba(var(--card-rgb), 0);
   border: 1px solid rgba(var(--card-border-rgb), 0);
-  transition: background 200ms, border 200ms;
+  transition:
+    background 200ms,
+    border 200ms;
 }
 
 .card span {
@@ -97,7 +99,7 @@
 
 .center::before,
 .center::after {
-  content: '';
+  content: "";
   left: 50%;
   position: absolute;
   filter: blur(45px);
@@ -107,7 +109,7 @@
 .logo {
   position: relative;
 }
-/* Enable hover only on non-touch devices */
+Enable hover only on non-touch devices */ /* 
 @media (hover: hover) and (pointer: fine) {
   .card:hover {
     background: rgba(var(--card-rgb), 0.1);
@@ -125,7 +127,7 @@
   }
 }
 
-/* Mobile */
+ Mobile */ /* 
 @media (max-width: 700px) {
   .content {
     padding: 4rem;
@@ -201,8 +203,7 @@
     z-index: 1;
   }
 }
-
-/* Tablet and Smaller Desktop */
+ Tablet and Smaller Desktop */ /*
 @media (min-width: 701px) and (max-width: 1120px) {
   .grid {
     grid-template-columns: repeat(2, 50%);
@@ -227,3 +228,4 @@
     transform: rotate(0deg);
   }
 }
+ */
