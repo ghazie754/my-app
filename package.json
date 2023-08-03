@@ -12,6 +12,7 @@
     "check-lint": "eslint . --ext ts --ext tsx --ext js",
     "format": "prettier --write .",
     "pre-commit": "next lint",
+    "test-all": "npm run check-format && npm run check-lint && npm run check-types && npm run build",
     "prepare": "husky install"
   },
   "dependencies": {

@@ -12,6 +12,28 @@ yarn dev
 pnpm dev
 ```
 
+<!-- // env: {
+//   browser: true,
+//   es2021: true,
+// },
+// extends: ["plugin:react/recommended", "google", "prettier"],
+// "parser": "@typescript-eslint/parser",
+// "parserOptions": {
+//   "ecmaFeatures": {
+//     "jsx": true,
+//   },
+//   "ecmaVersion": 12,
+//   "sourceType": "module",
+// },
+// "plugins": ["react", "@typescript-eslint"],
+// "rules": {},
+// "settings": {
+//   "react": {
+//     "version": "latest",
+//   },
+
+// }, -->
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
