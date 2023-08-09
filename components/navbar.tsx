@@ -1,3 +1,4 @@
+import Navlinks from "./sidebarlinks";
 export default function Navbar(): JSX.Element {
   return (
     <>
@@ -11,21 +12,7 @@ export default function Navbar(): JSX.Element {
               <i className="fas fa-bars"></i>
             </button>
           </div>
-          {/* <!-- nav links --> */}
-          <ul className="nav-links">
-            <li>
-              <a href="index.html">home</a>
-            </li>
-            <li>
-              <a href="about.html">about</a>
-            </li>
-            <li>
-              <a href="projects.html">projects</a>
-            </li>
-            <li>
-              <a href="contact.html">contact</a>
-            </li>
-          </ul>
+          <Navlinks />
         </div>
       </nav>
       {/* <!-- end of navbar -->*/}

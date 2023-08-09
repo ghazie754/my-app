@@ -1,3 +1,6 @@
+import Socialicon from "./socialicon";
+import Navlinks from "./sidebarlinks";
+
 export default function Hero(): JSX.Element {
   return (
     <>
@@ -10,57 +13,8 @@ export default function Hero(): JSX.Element {
           <button id="close-btn" className="close-btn">
             <i className="fas fa-times"></i>
           </button>
-          <ul className="sidebar-links">
-            <li>
-              <a href="index.html">home</a>
-            </li>
-            <li>
-              <a href="about.html">about</a>
-            </li>
-            <li>
-              <a href="projects.html">projects</a>
-            </li>
-            <li>
-              <a href="contact.html">contact</a>
-            </li>
-          </ul>
-          <ul className="social-icons">
-            {/* <!-- single item --> */}
-            <li>
-              <a href="https://www.twitter.com" className="social-icon">
-                <i className="fab fa-facebook"></i>
-              </a>
-            </li>
-            {/* <!-- end of single item --> */}
-            {/* <!-- single item --> */}
-            <li>
-              <a href="https://www.twitter.com" className="social-icon">
-                <i className="fab fa-linkedin"></i>
-              </a>
-            </li>
-            {/* <!-- end of single item --> */}
-            {/* <!-- single item --> */}
-            <li>
-              <a href="https://www.twitter.com" className="social-icon">
-                <i className="fab fa-squarespace"></i>
-              </a>
-            </li>
-            {/* <!-- end of single item --> */}
-            {/* <!-- single item --> */}
-            <li>
-              <a href="https://www.twitter.com" className="social-icon">
-                <i className="fab fa-behance"></i>
-              </a>
-            </li>
-            {/* <!-- end of single item --> */}
-            {/* <!-- single item --> */}
-            <li>
-              <a href="https://www.twitter.com" className="social-icon">
-                <i className="fab fa-instagram"></i>
-              </a>
-            </li>
-            {/* <!-- end of single item --> */}
-          </ul>
+          <Navlinks />
+          <Socialicon />
         </div>
       </aside>
       {/* <!-- end of sidebar --> */}
