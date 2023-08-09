@@ -1,3 +1,4 @@
+import Link from "next/link";
 export default function socialicon(): JSX.Element {
   return (
     <>
@@ -5,37 +6,37 @@ export default function socialicon(): JSX.Element {
       <ul className="social-icons">
         {/* <!-- single item --> */}
         <li>
-          <a href="https://www.twitter.com" className="social-icon">
+          <Link href={""} className="social-icon">
             <i className="fab fa-facebook"></i>
-          </a>
+          </Link>
         </li>
         {/* <!-- end of single item --> */}
         {/* <!-- single item --> */}
         <li>
-          <a href="https://www.twitter.com" className="social-icon">
+          <Link href={""} className="social-icon">
             <i className="fab fa-linkedin"></i>
-          </a>
+          </Link>
         </li>
         {/* <!-- end of single item --> */}
         {/* <!-- single item --> */}
         <li>
-          <a href="https://www.twitter.com" className="social-icon">
+          <Link href={""} className="social-icon">
             <i className="fab fa-squarespace"></i>
-          </a>
+          </Link>
         </li>
         {/* <!-- end of single item --> */}
         {/* <!-- single item --> */}
         <li>
-          <a href="https://www.twitter.com" className="social-icon">
+          <Link href={""} className="social-icon">
             <i className="fab fa-behance"></i>
-          </a>
+          </Link>
         </li>
         {/* <!-- end of single item --> */}
         {/* <!-- single item --> */}
         <li>
-          <a href="https://www.twitter.com" className="social-icon">
+          <Link href={""} className="social-icon">
             <i className="fab fa-instagram"></i>
-          </a>
+          </Link>
         </li>
         {/* <!-- end of single item --> */}
       </ul>
