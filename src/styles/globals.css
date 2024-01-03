@@ -114,16 +114,24 @@ body {
   grid-area: header;
 }
 
-.main {
+main {
+  position: relative;
   grid-area: main;
   height: 100%;
   width: 100%;
 }
 
-.main canvas {
+main .canvas {
+  position: absolute;
+  z-index: -1;
   height: 100%;
   width: 100%;
-  z-index: -1;
+}
+
+main section {
+  z-index: 1;
+  height: 100%;
+  width: 100%;
 }
 
 .footer {

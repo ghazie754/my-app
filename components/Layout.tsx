@@ -14,6 +14,7 @@ export default function Layout({ children }: { children?: any }): JSX.Element {
   return (
     <>
       <Hero />
+
       {/* <!-- main --> */}
       <main>
         <canvas ref={canvasRef} tabIndex={0} className='canvas' />
