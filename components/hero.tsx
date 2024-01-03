@@ -1,11 +1,17 @@
-import Socialicon from "./socialicon";
-import Navlinks from "./sidebarlinks";
-
+import Image from "next/image";
+import Navbar from "./navbar";
 export default function Hero(): JSX.Element {
   return (
     <>
       {/* <!-- Hero --> */}
-      <div className="Hero" id="Hero"></div>
+      <div className="Hero" id="Hero">
+        <Image
+          src={"/../public/istock.jpg"}
+          alt={"istock"}
+          height={100}
+          width={100}
+        />
+      </div>
       {/* <!-- end of Hero -->*/}
       {/* <!-- sidebar --> */}
       <aside className="sidebar" id="sidebar">
@@ -13,11 +19,10 @@ export default function Hero(): JSX.Element {
           <button id="close-btn" className="close-btn">
             <i className="fas fa-times"></i>
           </button>
-          <Navlinks />
-          <Socialicon />
         </div>
       </aside>
       {/* <!-- end of sidebar --> */}
+      <Navbar />
     </>
   );
 }

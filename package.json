@@ -18,6 +18,18 @@
     "test-all": "npm run check-format && npm run check-lint && npm run check-types && npm run build",
     "prepare": "husky install"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn run type-check"
+    }
+  },
+  "lint-staged": {
+    "*.@(ts|tsx)": [
+      "yarn lint",
+      "yarn format"
+    ]
+  },
   "dependencies": {
     "@types/node": "20.4.6",
     "@types/react": "18.2.18",
@@ -30,8 +42,10 @@
     "typescript": "5.1.6"
   },
   "devDependencies": {
+    "eslint": "^7.19.0",
     "husky": "^8.0.0",
     "lint-staged": "^13.2.3",
-    "prettier": "3.0.1"
+    "prettier": "3.0.1",
+    "sass": "^1.69.7"
   }
 }

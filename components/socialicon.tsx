@@ -6,36 +6,32 @@ export default function socialicon(): JSX.Element {
       <ul className="social-icons">
         {/* <!-- single item --> */}
         <li>
-          <Link href={""} className="social-icon">
-            <i className="fab fa-facebook"></i>
+          <Link href={"https://twitter.com/GhaziErn"} className="social-icon">
+            <i className="fab fa-twitter">twitter</i>
           </Link>
         </li>
         {/* <!-- end of single item --> */}
         {/* <!-- single item --> */}
         <li>
-          <Link href={""} className="social-icon">
-            <i className="fab fa-linkedin"></i>
+          <Link
+            href={"https://www.linkedin.com/in/ghazi-ern-52a32b21a/"}
+            className="social-icon"
+          >
+            <i className="fab fa-linkedin">linkedin</i>
           </Link>
         </li>
         {/* <!-- end of single item --> */}
         {/* <!-- single item --> */}
         <li>
-          <Link href={""} className="social-icon">
-            <i className="fab fa-squarespace"></i>
+          <Link href={"https://github.com/ghazie754"} className="social-icon">
+            <i className="fab fa-github">github</i>
           </Link>
         </li>
         {/* <!-- end of single item --> */}
         {/* <!-- single item --> */}
         <li>
-          <Link href={""} className="social-icon">
-            <i className="fab fa-behance"></i>
-          </Link>
-        </li>
-        {/* <!-- end of single item --> */}
-        {/* <!-- single item --> */}
-        <li>
-          <Link href={""} className="social-icon">
-            <i className="fab fa-instagram"></i>
+          <Link href={"https://codepen.io/ghazie754"} className="social-icon">
+            <i className="fab fa-codepen">codepen</i>
           </Link>
         </li>
         {/* <!-- end of single item --> */}
