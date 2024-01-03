@@ -1,9 +1,9 @@
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
-    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
-    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
+    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
+    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
 
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -103,11 +103,11 @@ body {
 
   display: grid;
   grid:
-    "header header header" 1fr
-    ". main ." 1fr
-    "footer footer footer" 1fr
+    'header header header' 1fr
+    'main main main' 1fr
+    'footer footer footer' 1fr
     / 1fr 1fr 1fr;
-  gap: 8px;
+  gap: 1px;
 }
 
 .header {
@@ -115,17 +115,14 @@ body {
 }
 
 .main {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 6rem;
-  min-height: 100vh;
+  grid-area: main;
+  height: 100%;
+  width: 100%;
 }
 
 .main canvas {
-  height: auto;
-  width: auto;
+  height: 100%;
+  width: 100%;
   z-index: -1;
 }
 

@@ -1,21 +1,28 @@
-import { Inter } from "next/font/google";
+import { Inter } from 'next/font/google';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
 
-import React from "react";
-import Footer from "./footer";
-import Hero from "./hero";
+import React from 'react';
+import Footer from './footer';
+import Hero from './hero';
+import draw from './draw';
 
-export default function Layout({
-  children,
-}: {
-  children?: React.ReactNode;
-}): JSX.Element {
+export default function Layout({ children }: { children?: any }): JSX.Element {
+  const canvasRef = React.useRef<HTMLCanvasElement | any>(undefined);
+
+  React.useEffect(() => {
+    const constext = canvasRef.current;
+    const ctx = constext.getContext('2d');
+    draw(ctx);
+  }, []);
   return (
     <>
       <Hero />
       {/* <!-- main --> */}
-      <main className={` ${inter.className}`}>{children}</main>
+      <main className={` ${inter.className}`}>
+        <canvas ref={canvasRef} tabIndex={0} className='canvas' />
+        {children}
+      </main>
       {/* <!-- end of section --> */}
       <Footer />
     </>
