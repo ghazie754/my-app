@@ -1,7 +1,3 @@
-import { Inter } from 'next/font/google';
-
-const inter = Inter({ subsets: ['latin'] });
-
 import React from 'react';
 import Footer from './footer';
 import Hero from './hero';
@@ -19,7 +15,7 @@ export default function Layout({ children }: { children?: any }): JSX.Element {
     <>
       <Hero />
       {/* <!-- main --> */}
-      <main className={` ${inter.className}`}>
+      <main>
         <canvas ref={canvasRef} tabIndex={0} className='canvas' />
         {children}
       </main>
