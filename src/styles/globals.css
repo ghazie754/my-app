@@ -152,19 +152,16 @@ i {
   }
 }
 @keyframes gradient1 {
-  from {
-    color: #808080;
+  0% {
+    color: #7ea058;
   }
-  to {
-    color: #ffffff;
+  50% {
+    color: #9540a7;
   }
-}
-
-@keyframes gradient2 {
-  from {
-    color: #ffffff;
+  75% {
+    color: #2082df;
   }
-  to {
-    color: #7e7e7e;
+  100% {
+    color: #1e745e;
   }
 }
