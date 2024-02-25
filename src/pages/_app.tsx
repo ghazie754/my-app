@@ -1,36 +1,33 @@
 import React from 'react';
 import '@/styles/styles.scss';
 import '@/styles/globals.scss';
-import dynamic from 'next/dynamic';
-import type { AppProps } from 'next/app';
+import Hero from '@/components/hero';
+import { AppProps } from 'next/app';
+import { useRouter } from 'next/router';
+import Footer from '@/components/footer';
 import { AnimatePresence } from 'framer-motion';
-
-const Hero = dynamic(() => import('../components/hero'), { ssr: false });
-
-const Footer = dynamic(() => import('../components/footer'), { ssr: false });
-
-const variants = {
-  hidden: { opacity: 0, x: -200, y: 0 },
-  enter: { opacity: 1, x: 0, y: 0 },
-};
 
 function Layout({ children }: { children?: any }): JSX.Element {
   return (
     <>
-      <Hero />
-      {/* <!-- main --> */}
-      <AnimatePresence mode='wait'>{children}</AnimatePresence>
-      {/* <!-- end of main --> */}
-      <Footer />
+      <AnimatePresence initial={false} mode='popLayout'>
+        <Hero />
+        {/* <!-- main --> */}
+        {children}
+        {/* <!-- end of main --> */}
+        <Footer />
+      </AnimatePresence>
     </>
   );
 }
 
 export default function App({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+  const pageKey = router.asPath;
   return (
     <>
       <Layout>
-        <Component {...pageProps} />
+        <Component key={pageKey} {...pageProps} />
       </Layout>
     </>
   );
