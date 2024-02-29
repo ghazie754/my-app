@@ -15,43 +15,36 @@
   display: none;
 }
 
-html,
-body,
-#__next {
-  width: 100%;
-  height: 100%;
-}
-#__next {
+#__next .curve {
+  display: grid;
   grid-template-areas:
     'header header header'
     'aside main main'
-    'footer footer';
+    'footer footer footer';
   // grid-template-columns: repeat(3, 1fr);
   // grid-template-rows: 1fr 1fr;
-  .curve {
-    svg,
-    .background {
-      position: fixed;
-      height: calc(100vh + 600px);
-      width: 100%;
-      pointer-events: none;
-      left: 0;
-      top: 0;
-    }
-    .background {
-      background-color: black;
-      transition: opacity 0s linear 0.1s;
-    }
-    .route {
-      position: absolute;
-      left: 50%;
-      top: 40%;
-      color: white;
-      font-size: 46px;
-      z-index: 3;
-      transform: translateX(-50%);
-      text-align: center;
-    }
+  svg,
+  .background {
+    position: fixed;
+    height: calc(100vh + 600px);
+    width: 100%;
+    pointer-events: none;
+    left: 0;
+    top: 0;
+  }
+  .background {
+    background-color: black;
+    transition: opacity 0s linear 0.1s;
+  }
+  .route {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    color: white;
+    font-size: 46px;
+    z-index: 3;
+    transform: translateX(-50%);
+    text-align: center;
   }
   .Hero {
     grid-area: header;
@@ -109,12 +102,10 @@ body,
   }
 
   .footer {
-    opacity: 0;
     grid-area: footer;
     left: 0;
     bottom: 0;
     width: 100%;
-    z-index: 1;
   }
 }
 a,

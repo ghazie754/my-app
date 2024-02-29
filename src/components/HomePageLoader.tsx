@@ -5,6 +5,7 @@ import { anim, SVG, text } from './TransitionLayout';
 export default function HomePageLoader({
   backgroundColor,
   children,
+  key,
 }:
   | { backgroundColor?: string; children?: React.ReactNode }
   | any): JSX.Element {
@@ -36,9 +37,10 @@ export default function HomePageLoader({
         className='background'
       />
       <motion.p className='route' {...anim(text)}>
-        {children}
+        {key}
       </motion.p>
       {dimensions.width != null && <SVG {...dimensions} />}
+      {children}
     </div>
   );
 }

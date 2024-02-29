@@ -5,6 +5,7 @@ import { anim, SVG, text } from './TransitionLayout';
 export default function PageTransition({
   backgroundColor,
   children,
+  key,
 }:
   | { backgroundColor?: string; children?: React.ReactNode }
   | any): JSX.Element {
@@ -27,18 +28,16 @@ export default function PageTransition({
     };
   }, []);
   return (
-    <div
-      className='page curve PageTransition'
-      style={{ backgroundColor: backgroundColor }}
-    >
+    <div className='page curve' style={{ backgroundColor: backgroundColor }}>
       <div
         style={{ opacity: dimensions.width == null ? 1 : 0 }}
         className='background'
       />
       <motion.p className='route' {...anim(text)}>
-        {children}
+        {key}
       </motion.p>
       {dimensions.width != null && <SVG {...dimensions} />}
+      {children}
     </div>
   );
 }

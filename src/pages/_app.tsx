@@ -21,18 +21,19 @@ export default function App({ Component, pageProps, router }: AppProps) {
       </Head>
       {/* <!-- end of Head --> */}
       <AnimatePresence mode='wait'>
-        <Layout>
-          {router.route == '/' ? (
-            <HomePageLoader backgroundColor={'geren'}>
-              {routes[router.route]}
-            </HomePageLoader>
-          ) : (
-            <PageTransition backgroundColor={'blue'}>
-              {routes[router.route]}
-            </PageTransition>
-          )}
-          <Component key={router} {...pageProps} />
-        </Layout>
+        {router.route == '/' ? (
+          <HomePageLoader backgroundColor={'green'}>
+            <Layout>
+              <Component key={router} {...pageProps} />
+            </Layout>
+          </HomePageLoader>
+        ) : (
+          <PageTransition backgroundColor={'blue'}>
+            <Layout>
+              <Component key={router} {...pageProps} />
+            </Layout>
+          </PageTransition>
+        )}
       </AnimatePresence>
     </>
   );
