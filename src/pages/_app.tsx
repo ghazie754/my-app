@@ -10,26 +10,6 @@ import { AnimatePresence } from 'framer-motion';
 import { routes } from '@/components/TransitionLayout';
 
 export default function App({ Component, pageProps, router }: AppProps) {
-  const [loading, setLoading] = React.useState(false);
-
-  React.useEffect(() => {
-    // Used for page transition
-
-    const start = () => {
-      setLoading(true);
-    };
-    const end = () => {
-      setLoading(false);
-    };
-    router.events.on('routeChangeStart', start);
-    router.events.on('routeChangeComplete', end);
-    router.events.on('routeChangeError', end);
-    return () => {
-      router.events.off('routeChangeStart', start);
-      router.events.off('routeChangeComplete', end);
-      router.events.off('routeChangeError', end);
-    };
-  }, []);
   return (
     <>
       {/* <!-- Head --> */}
