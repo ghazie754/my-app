@@ -1,32 +1,34 @@
 import { useEffect, useState } from 'react';
 
 export default function Hero(): JSX.Element {
-  const [clientWindowHeight, setClientWindowHeight] = useState<any>('');
-  const [backgroundTransparacy, setBackgroundTransparacy] = useState(0);
-  const handleScroll = () => {
-    setClientWindowHeight(window.scrollY);
-  };
+  // const [clientWindowHeight, setClientWindowHeight] = useState<any>('');
+  // const [backgroundTransparacy, setBackgroundTransparacy] = useState(0);
+  // const handleScroll = () => {
+  //   setClientWindowHeight(window.scrollY);
+  // };
 
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  });
+  // useEffect(() => {
+  //   window.addEventListener('scroll', handleScroll);
+  //   return () => window.removeEventListener('scroll', handleScroll);
+  // });
 
-  useEffect(() => {
-    let backgroundTransparacyVar = clientWindowHeight / 120;
-    backgroundTransparacyVar < 10
-      ? setBackgroundTransparacy(backgroundTransparacyVar)
-      : null;
-  }, [clientWindowHeight]);
+  // useEffect(() => {
+  //   let backgroundTransparacyVar = clientWindowHeight / 120;
+  //   backgroundTransparacyVar < 10
+  //     ? setBackgroundTransparacy(backgroundTransparacyVar)
+  //     : null;
+  // }, [clientWindowHeight]);
   return (
     <>
       {/* <!-- Hero --> */}
       <div
         className='Hero'
         id='Hero'
-        style={{
-          background: `rgba(255, 255, 255, ${backgroundTransparacy})`,
-        }}
+        style={
+          {
+            // background: `rgba(255, 255, 255, ${backgroundTransparacy})`,
+          }
+        }
       >
         {/* <!-- Logo -->*/}
         <button className='nav-btn' id='logo'>
