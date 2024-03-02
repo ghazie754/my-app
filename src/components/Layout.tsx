@@ -1,21 +1,70 @@
+import { AnimatePresence, motion } from 'framer-motion';
+import { Router } from 'next/router';
+import React from 'react';
+import { SVG } from './PageTransition';
+import { anim, text, routes } from './TransitionLayout';
 import Footer from './footer';
 import Hero from './hero';
+export default function Layout({
+  children,
+  router,
+}: { children: React.ReactNode } | any) {
+  const [dimensions, setDimensions] = React.useState<any>({
+    width: null,
+    height: null,
+  });
+  // const [clientWindowHeight, setClientWindowHeight] = useState<any>('');
+  // const handleScroll = () => {
+  //   setClientWindowHeight(window.scrollY);
+  // };
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+  // useEffect(() => {
+  //   window.addEventListener('scroll', handleScroll);
+  //   return () => window.removeEventListener('scroll', handleScroll);
+  // });
+  React.useEffect(() => {
+    function resize() {
+      setDimensions({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+    resize();
+    window.addEventListener('resize', resize);
+    return () => {
+      window.removeEventListener('resize', resize);
+    };
+  }, []);
+  const backgroundColor = '#B0AD98';
   return (
-    <>
-      <Hero />
-      {/* <!-- sidebar --> */}
-      <aside className='sidebar' id='sidebar'>
-        <div>
-          <button id='close-btn' className='close-btn'>
-            <i className='fas fa-times'></i>
-          </button>
-        </div>
-      </aside>
-      {/* <!-- end of sidebar --> */}
-      <main>{children}</main>
-      <Footer />
-    </>
+    <AnimatePresence mode='wait'>
+      <div
+        className='page curve HomePageLoader'
+        style={{ backgroundColor: backgroundColor }}
+      >
+        <div
+          style={{ opacity: dimensions.width == null ? 1 : 0 }}
+          className='background'
+        />
+        <motion.p className='route' {...anim(text)}>
+          {routes[router.route]}
+        </motion.p>
+        {dimensions.width != null && <SVG {...dimensions} />}
+        <Hero />
+        {/* <!-- sidebar --> */}
+        <aside className='sidebar' id='sidebar'>
+          <div>
+            <button id='close-btn' className='close-btn'>
+              <i className='fas fa-times'></i>
+            </button>
+          </div>
+        </aside>
+        {/* <!-- end of sidebar --> */}
+        {/* <!-- main --> */}
+        <main>{children}</main>
+        {/* <!-- end of main --> */}
+        <Footer />
+      </div>
+    </AnimatePresence>
   );
 }

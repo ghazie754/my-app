@@ -1,15 +1,12 @@
 import React from 'react';
+import Head from 'next/head';
 import '@/styles/styles.scss';
 import '@/styles/globals.scss';
 import { AppProps } from 'next/app';
 import Layout from '@/components/Layout';
-import PageTransition from '@/components/PageTransition';
-import HomePageLoader from '@/components/HomePageLoader';
-import Head from 'next/head';
-import { AnimatePresence } from 'framer-motion';
-import { routes } from '@/components/TransitionLayout';
 
 export default function App({ Component, pageProps, router }: AppProps) {
+  const backgroundColor = '#B0AD98';
   return (
     <>
       {/* <!-- Head --> */}
@@ -20,21 +17,9 @@ export default function App({ Component, pageProps, router }: AppProps) {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       {/* <!-- end of Head --> */}
-      <AnimatePresence mode='wait'>
-        {router.route == '/' ? (
-          <HomePageLoader backgroundColor={'green'}>
-            <Layout>
-              <Component key={router} {...pageProps} />
-            </Layout>
-          </HomePageLoader>
-        ) : (
-          <PageTransition backgroundColor={'blue'}>
-            <Layout>
-              <Component key={router} {...pageProps} />
-            </Layout>
-          </PageTransition>
-        )}
-      </AnimatePresence>
+      <Layout router={router}>
+        <Component key={router} {...pageProps} />
+      </Layout>
     </>
   );
 }

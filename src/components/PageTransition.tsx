@@ -1,43 +1,44 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { anim, SVG, text } from './TransitionLayout';
+import { anim, translate } from './TransitionLayout';
 
-export default function PageTransition({
-  backgroundColor,
-  children,
-  key,
-}:
-  | { backgroundColor?: string; children?: React.ReactNode }
-  | any): JSX.Element {
-  const [dimensions, setDimensions] = React.useState<any>({
-    width: null,
-    height: null,
-  });
+const curve = (initialPath: any, targetPath: any) => {
+  return {
+    initial: {
+      d: initialPath,
+    },
+    enter: {
+      d: targetPath,
+      transition: { duration: 0.75, delay: 0.35, ease: [0.76, 0, 0.24, 1] },
+    },
+    exit: {
+      d: initialPath,
+      transition: { duration: 0.75, ease: [0.76, 0, 0.24, 1] },
+    },
+  };
+};
 
-  React.useEffect(() => {
-    function resize() {
-      setDimensions({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
-    }
-    resize();
-    window.addEventListener('resize', resize);
-    return () => {
-      window.removeEventListener('resize', resize);
-    };
-  }, []);
+export const SVG = ({ height, width }: any) => {
+  const initialPath = `
+        M0 300 
+        Q${width / 2} 0 ${width} 300
+        L${width} ${height + 300}
+        Q${width / 2} ${height + 600} 0 ${height + 300}
+        L0 0
+    `;
+
+  const targetPath = `
+        M0 300
+        Q${width / 2} 0 ${width} 300
+        L${width} ${height}
+        Q${width / 2} ${height} 0 ${height}
+        L0 0
+    `;
+
   return (
-    <div className='page curve' style={{ backgroundColor: backgroundColor }}>
-      <div
-        style={{ opacity: dimensions.width == null ? 1 : 0 }}
-        className='background'
-      />
-      <motion.p className='route' {...anim(text)}>
-        {key}
-      </motion.p>
-      {dimensions.width != null && <SVG {...dimensions} />}
-      {children}
-    </div>
+    <>
+      <motion.svg {...anim(translate)}>
+        <motion.path {...anim(curve(initialPath, targetPath))} />
+      </motion.svg>
+    </>
   );
-}
+};

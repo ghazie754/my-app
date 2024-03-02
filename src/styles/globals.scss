@@ -14,7 +14,13 @@
 ::-webkit-scrollbar {
   display: none;
 }
-
+html,
+body,
+#__next,
+#__next .curve {
+  width: 100%;
+  height: 100%;
+}
 #__next .curve {
   display: grid;
   grid-template-areas:
@@ -31,6 +37,7 @@
     pointer-events: none;
     left: 0;
     top: 0;
+    z-index: 2;
   }
   .background {
     background-color: black;
