@@ -1,12 +1,10 @@
 import React from 'react';
 import Head from 'next/head';
-import '@/styles/styles.scss';
 import '@/styles/globals.scss';
 import { AppProps } from 'next/app';
 import Layout from '@/components/Layout';
 
 export default function App({ Component, pageProps, router }: AppProps) {
-  const backgroundColor = '#B0AD98';
   return (
     <>
       {/* <!-- Head --> */}
@@ -18,7 +16,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
       </Head>
       {/* <!-- end of Head --> */}
       <Layout router={router}>
-        <Component key={router} {...pageProps} />
+        <Component {...pageProps} />
       </Layout>
     </>
   );

@@ -9,19 +9,11 @@ export default function Layout({
   children,
   router,
 }: { children: React.ReactNode } | any) {
+  // const [state, dispatch] = React.useReducer(reducer, initialState);
   const [dimensions, setDimensions] = React.useState<any>({
     width: null,
     height: null,
   });
-  // const [clientWindowHeight, setClientWindowHeight] = useState<any>('');
-  // const handleScroll = () => {
-  //   setClientWindowHeight(window.scrollY);
-  // };
-
-  // useEffect(() => {
-  //   window.addEventListener('scroll', handleScroll);
-  //   return () => window.removeEventListener('scroll', handleScroll);
-  // });
   React.useEffect(() => {
     function resize() {
       setDimensions({
@@ -35,13 +27,9 @@ export default function Layout({
       window.removeEventListener('resize', resize);
     };
   }, []);
-  const backgroundColor = '#B0AD98';
   return (
     <AnimatePresence mode='wait'>
-      <div
-        className='page curve HomePageLoader'
-        style={{ backgroundColor: backgroundColor }}
-      >
+      <div className='curve HomePageLoader'>
         <div
           style={{ opacity: dimensions.width == null ? 1 : 0 }}
           className='background'
