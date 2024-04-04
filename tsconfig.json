@@ -18,6 +18,12 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "postcss.config.js",
+    "tailwind.config.js"
+  ],
+  "exclude": ["node_modules", "src/components/Provider.tsx"]
 }

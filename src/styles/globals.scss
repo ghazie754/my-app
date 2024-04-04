@@ -1,7 +1,8 @@
-// :root {
-//   // color: oldlace;
+// :root{
 // }
-
+@import '~tailwindcss/base';
+@import '~tailwindcss/components';
+@import '~tailwindcss/utilities';
 * {
   box-sizing: border-box;
   padding: 0;
@@ -9,10 +10,6 @@
   ::-webkit-scrollbar {
     display: none;
   }
-}
-
-::-webkit-scrollbar {
-  display: none;
 }
 html,
 body,
@@ -132,4 +129,7 @@ p {
   letter-spacing: 1px;
   font-size: 14px;
   color: #333333;
+}
+::-webkit-scrollbar {
+  display: none;
 }

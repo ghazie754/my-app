@@ -1,3 +1,7 @@
+@import '~tailwindcss/base';
+@import '~tailwindcss/components';
+@import '~tailwindcss/utilities';
+
 /* Add responsiveness - on screens less than 580px wide, display the navbar vertically instead of horizontally */
 @media screen and (max-width: 580px) {
   #navbar {

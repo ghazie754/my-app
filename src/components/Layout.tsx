@@ -5,6 +5,7 @@ import { SVG } from './PageTransition';
 import { anim, text, routes } from './TransitionLayout';
 import Footer from './footer';
 import Hero from './hero';
+import Provider from './Provider';
 export default function Layout({
   children,
   router,
@@ -38,20 +39,22 @@ export default function Layout({
           {routes[router.route]}
         </motion.p>
         {dimensions.width != null && <SVG {...dimensions} />}
-        <Hero />
-        {/* <!-- sidebar --> */}
-        <aside className='sidebar' id='sidebar'>
-          <div>
-            <button id='close-btn' className='close-btn'>
-              <i className='fas fa-times'></i>
-            </button>
-          </div>
-        </aside>
-        {/* <!-- end of sidebar --> */}
-        {/* <!-- main --> */}
-        <main>{children}</main>
-        {/* <!-- end of main --> */}
-        <Footer />
+        <Provider>
+          <Hero />
+          {/* <!-- sidebar --> */}
+          <aside className='sidebar' id='sidebar'>
+            <div>
+              <button id='close-btn' className='close-btn'>
+                <i className='fas fa-times'></i>
+              </button>
+            </div>
+          </aside>
+          {/* <!-- end of sidebar --> */}
+          {/* <!-- main --> */}
+          <main>{children}</main>
+          {/* <!-- end of main --> */}
+          <Footer />
+        </Provider>
       </div>
     </AnimatePresence>
   );
