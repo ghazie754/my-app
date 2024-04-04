@@ -1,11 +1,13 @@
+'use client';
+
 import { AnimatePresence, motion } from 'framer-motion';
-import { Router } from 'next/router';
 import React from 'react';
 import { SVG } from './PageTransition';
 import { anim, text, routes } from './TransitionLayout';
 import Footer from './footer';
 import Hero from './hero';
 import Provider from './Provider';
+
 export default function Layout({
   children,
   router,
@@ -40,7 +42,7 @@ export default function Layout({
         </motion.p>
         {dimensions.width != null && <SVG {...dimensions} />}
         <Provider>
-          <Hero />
+          {/* <Hero /> */}
           {/* <!-- sidebar --> */}
           <aside className='sidebar' id='sidebar'>
             <div>
