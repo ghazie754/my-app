@@ -42,15 +42,15 @@ export default function Layout({
         </motion.p>
         {dimensions.width != null && <SVG {...dimensions} />}
         <Provider>
-          {/* <Hero /> */}
+          <Hero />
           {/* <!-- sidebar --> */}
-          <aside className='sidebar' id='sidebar'>
+          {/* <aside className='sidebar' id='sidebar'>
             <div>
               <button id='close-btn' className='close-btn'>
                 <i className='fas fa-times'></i>
               </button>
             </div>
-          </aside>
+          </aside> */}
           {/* <!-- end of sidebar --> */}
           {/* <!-- main --> */}
           <main>{children}</main>
