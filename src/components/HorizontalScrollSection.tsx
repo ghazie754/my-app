@@ -1,7 +1,7 @@
 // components/HorizontalScrollSection.js
-import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -10,8 +10,8 @@ const HorizontalScrollSection = ({ children }: any) => {
 
   useEffect(() => {
     const section = sectionRef.current;
-    const container = section.querySelector('.container');
-    const content = section.querySelector('.content');
+    const container = section.querySelector(".container");
+    const content = section.querySelector(".content");
 
     const width = content.offsetWidth - container.offsetWidth;
 
@@ -19,8 +19,8 @@ const HorizontalScrollSection = ({ children }: any) => {
       x: -width,
       scrollTrigger: {
         trigger: section,
-        start: 'top top',
-        end: 'bottom bottom',
+        start: "top top",
+        end: "bottom bottom",
         scrub: 1,
         pin: true,
       },
@@ -28,9 +28,9 @@ const HorizontalScrollSection = ({ children }: any) => {
   }, []);
 
   return (
-    <div ref={sectionRef} className='horizontal-scroll-section'>
-      <div className='container'>
-        <div className='content'>{children}</div>
+    <div ref={sectionRef} className="horizontal-scroll-section">
+      <div className="container">
+        <div className="content">{children}</div>
       </div>
     </div>
   );

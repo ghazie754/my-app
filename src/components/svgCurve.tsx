@@ -1,14 +1,14 @@
-// import styles from '../styles/page.module.scss';
-// import { useRef, useEffect, MouseEvent } from 'react';
+// import React from "react";
+// import styles from "../styles/page.module.scss";
 
 // export default function svgCurve() {
-//   const path = useRef<any>();
+//   const path = React.useRef<any>(null);
 //   let progress = 0;
 //   let x = 0.5;
 //   let time = Math.PI / 2;
 //   let reqId: number | null = null;
 
-//   useEffect(() => {
+//   React.useEffect(() => {
 //     setPath(progress);
 //   }, []);
 
@@ -16,7 +16,7 @@
 //     const width = window.innerWidth * 0.7;
 //     path.current.setAttributeNS(
 //       null,
-//       'd',
+//       "d",
 //       `M0 250 Q${width * x} ${250 + progress}, ${width} 250`
 //     );
 //   };

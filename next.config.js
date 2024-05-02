@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-const path = require('path');
+const path = require("path");
 const nextConfig = {
   trailingSlash: true,
   webpackDevMiddleware: (config) => {
@@ -10,11 +10,11 @@ const nextConfig = {
     return config;
   },
   sassOptions: {
-    includePaths: [path.join(__dirname, 'styles')],
+    includePaths: [path.join(__dirname, "styles")],
   },
   i18n: {
-    locales: ['default', 'en', 'de', 'fr'],
-    defaultLocale: 'default',
+    locales: ["default", "en", "de", "fr"],
+    defaultLocale: "default",
     localeDetection: false,
   },
   trailingSlash: true,

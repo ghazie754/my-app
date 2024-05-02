@@ -1,59 +1,92 @@
-'use client';
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
+import { Scroll, ScrollControls } from "@react-three/drei";
+import * as THREE from "three";
+import style from "../styles/Home.module.scss";
+import React from "react";
 
-import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import React, { Suspense } from 'react';
-import {
-  CubeCamera,
-  Html,
-  OrbitControls,
-  Scroll,
-  ScrollControls,
-  Svg,
-  Text,
-  useIntersect,
-  useProgress,
-} from '@react-three/drei';
-import * as THREE from 'three';
-const words = [
-  'Hello',
-  'Bonjour',
-  'Ciao',
-  'Olà',
-  'やあ',
-  'Hallå',
-  'Guten tag',
-  'Hallo',
-];
-
-const Loader = () => {
-  const { active, progress, errors, item, loaded, total } = useProgress();
-  return <Html center>{progress} % loaded</Html>;
-};
 export default function Home() {
-  const [scrollPos, setScrollPos] = React.useState(0);
-  const canvasRef = React.useRef<any>();
-  React.useEffect(() => {
-    const handleScroll = () => {
-      setScrollPos(window.scrollY);
-    };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-  }, []);
   return (
     <>
-      <Canvas
-        ref={canvasRef}
-        orthographic
-        camera={{ zoom: 80 }}
-        gl={{ alpha: false, antialias: false, stencil: false, depth: false }}
-        dpr={[1, 1.5]}
-      >
-        <color attach='background' args={['#f0fdf0']} />
-        <ScrollControls pages={6}>
-          <Scroll html style={{ width: '100%' }}>
-            hi
-          </Scroll>
-        </ScrollControls>
-      </Canvas>
+      {/* <!--=============== HEADER ===============--> */}
+      <header className={style.header} id="header">
+        <svg></svg>
+        <div>
+          <ul>
+            <li>
+              <a href="">
+                <i></i>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <i></i>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <i></i>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <i></i>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <i></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      {/* <!--=============== MAIN ===============--> */}
+      <main className="main">
+        {/* <!--=============== HOME ===============--> */}
+        <section className="home section" id="home"></section>
+
+        {/* <!--=============== ABOUT ===============--> */}
+        <section className="about section" id="about"></section>
+
+        {/* <!--=============== SKILLS ===============--> */}
+        <section className="skills section" id="skills"></section>
+
+        {/* <!--=============== SERVICES ===============--> */}
+        <section className="services section"></section>
+
+        {/* <!--=============== WORK ===============--> */}
+        <section className="work section" id="work"></section>
+
+        {/* <!--=============== TESTIMONIALS ===============--> */}
+        <section className="testimonial section"></section>
+
+        {/* <!--=============== CONTACT ===============--> */}
+        <section className="contact section" id="contact"></section>
+      </main>
+
+      {/* <!--=============== FOOTER ===============--> */}
+      <footer className="footer"></footer>
+
+      <div className="btn_wrap">
+        <span>Share</span>
+        <div className="container">
+          <ul>
+            <li>
+              <i className="fa facebook-f">d</i>
+            </li>
+            <li>
+              <i className="fa twitter">d</i>
+            </li>
+            <li>
+              <i className="fa github">d</i>
+            </li>
+            <li>
+              <i className="fa instagram">d</i>
+            </li>
+          </ul>
+        </div>
+      </div>
     </>
   );
 }

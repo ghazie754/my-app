@@ -36,6 +36,7 @@ Derivative.ts
 *.tsbuildinfo
 
 #extra
+.vscode/*
 .next
 next-env.d.ts
 package-lock.json
