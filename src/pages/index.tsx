@@ -1,15 +1,38 @@
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { Scroll, ScrollControls } from "@react-three/drei";
-import * as THREE from "three";
 import style from "../styles/Home.module.scss";
 import React from "react";
+import Svgbackground from "@/components/SvgBackground";
+const words = [
+  "Hello",
+  "Bonjour",
+  "Ciao",
+  "Olà",
+  "やあ",
+  "Hallå",
+  "Guten tag",
+  "Hallo",
+];
+
+const images = [
+  "1.jpg",
+  "2.jpg",
+  "3.jpg",
+  "4.jpg",
+  "5.jpg",
+  "6.jpg",
+  "7.jpg",
+  "8.jpg",
+  "9.jpg",
+  "10.jpg",
+  "11.jpg",
+  "12.jpg",
+];
 
 export default function Home() {
   return (
     <>
+     <Svgbackground/>
       {/* <!--=============== HEADER ===============--> */}
       <header className={style.header} id="header">
-        <svg></svg>
         <div>
           <ul>
             <li>
@@ -73,7 +96,7 @@ export default function Home() {
         <div className="container">
           <ul>
             <li>
-              <i className="fa facebook-f">d</i>
+              <i className="fa facebook">d</i>
             </li>
             <li>
               <i className="fa twitter">d</i>

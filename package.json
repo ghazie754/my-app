@@ -30,6 +30,7 @@
     "@types/node": "20.4.6",
     "@types/react": "18.2.18",
     "@types/react-dom": "18.2.7",
+    "css-doodle": "^0.39.0",
     "eslint": "8.46.0",
     "locomotive-scroll": "^4.1.4",
     "next": "^13.5.6",
