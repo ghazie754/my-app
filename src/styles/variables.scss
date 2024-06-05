@@ -1,5 +1,80 @@
 /*=============== GOOGLE FONTS ===============*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+@use 'sass:math';
+@function cos-palette($frist_count, $last_count, $frequency, $center, $width) {
+  $colors: ();
+  $phase-r: 0;
+  $phase-g: 2 * 3.14159 / 3; // 120 degrees in radians
+  $phase-b: 4 * 3.14159 / 3; // 240 degrees in radians
+  @for $Index from $frist_count through $last_count - 1 {
+    $r: round($center + $width * cos( $frequency * $Index + $phase-r));
+    $g: round($center + $width * cos( $frequency * $Index + $phase-g));
+    $b: round($center + $width * cos( $frequency * $Index + $phase-b));
+    $color: rgb($r, $g, $b, math.random());
+    $colors: append($colors, $color);
+  }
+  @return $colors;
+}
+
+// Parameters
+$frist_count: 0;
+$last_count: 10; // Number of colors in the palette
+$frequency: 0.3; // Frequency of the cosine wave
+$center: 128; // Center value for RGB components
+$width: 127; // Amplitude of the cosine wave
+
+@debug cos-palette($frist_count, $last_count, $frequency, $center, $width);
+
+// :root{
+
+//   --primary-color: #333;
+//   --secondary-color: #666;
+//   --tertiary-color: #999;
+
+//   --quaternary-color: #ccc;
+//   --quinary-color: #f1f1f1;
+
+//   --senary-color: #fff;
+
+//   --title-color: hsl(var(--second-hue), 15%, 95%);
+//   --text-color: hsl(var(--second-hue), 8%, 75%);
+
+//   --background-start-rgb: 255, 255, 255;
+//   --background-end-rgb: 255, 255, 255;
+
+//   --grendate-color:  linear-gradient(90deg, cos-palette(0, 5, 0.3, 128, 127));
+//   --greenate-color:  linear-gradient(90deg, cos-palette(0, 5, 0.3, 128, 127));
+
+//   --background-image1: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+//   --background-image2: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+//   --background-image3: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+
+//   --h1-font-size: 1.5rem;
+//   --h2-font-size: 1.25rem;
+//   --h3-font-size: 1rem;
+
+//   --normal-font-size: 0.938rem;
+
+//   --border-rgb: 0, 0, 0;
+//   --border-radius: 12px;
+
+//   --Width: number;
+//   --Height: number;
+//  }
+// .header {
+//   background: #f16767;
+//   position: absolute;
+//   bottom: 0;
+//   left: 50%;
+//   border-radius: 50px;
+//   z-index: 1;
+//   h2{
+//     color: #3b6edc;
+//   }
+// }
+// // div.Hero{
+  
+// // }
 
 /*=============== VARIABLES CSS ===============*/
 :root {

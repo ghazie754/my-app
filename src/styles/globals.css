@@ -1,9 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 /*=============== BASE ===============*/
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  overflow: hidden;
   font-weight: bold;
 
   ::-webkit-scrollbar {
@@ -20,25 +22,11 @@ html {
 body {
   height: 100%;
   width: 100%;
-  background-color: var(--body-color);
-  color: var(--text-color);
   transition: 0.4s; /* for light mode animation */
-
-  button,
-  input,
-  textarea {
-    font-family: var(--body-font);
-    font-size: var(--normal-font-size);
-  }
-  div#__next,
-  main {
-    height: 100%;
-    width: 100%;
-  }
-  div#__next > svg {
-    position: absolute;
-    z-index: -10;
-  }
+}
+div#__next {
+  height: 100vh;
+  width: 100vw;
 }
 
 body,

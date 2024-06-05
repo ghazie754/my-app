@@ -1,12 +1,12 @@
 import React from "react";
-import "../styles/globals.scss";
+import "../styles/globals.css";
 
 import { AppProps } from "next/app";
+import Layout from "../../components/layout";
 
-import PageLoader from "@/components/PageLoader";
-import { AnimatePresence } from "framer-motion";
+import PageLoader from "@components/PageLoader";
 
-export default function App({ Component, router, pageProps }: AppProps) {
+export default function App({ Component, pageProps, router }: AppProps) {
   const [loading, setLoading] = React.useState(false);
 
   React.useEffect(() => {
@@ -18,7 +18,7 @@ export default function App({ Component, router, pageProps }: AppProps) {
     const end = () => {
       setTimeout(() => setLoading(false), 2500);
     };
- 
+
     router.events.on("routeChangeStart", start);
     router.events.on("routeChangeComplete", end);
     router.events.on("routeChangeError", end);
@@ -29,17 +29,13 @@ export default function App({ Component, router, pageProps }: AppProps) {
       router.events.off("routeChangeError", end);
     };
   }, [router]);
-  return (
-    <AnimatePresence mode="wait">
-      {
-        loading ? (
-          <PageLoader />
-        ) : (
-          <>
-            <Component {...pageProps} />
-          </>
-        )
-      }
-    </AnimatePresence>
+  return loading ? (
+    <PageLoader />
+  ) : (
+    <>
+      <Layout router={router}>
+        <Component {...pageProps} />
+      </Layout>
+    </>
   );
 }
